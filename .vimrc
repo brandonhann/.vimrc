@@ -33,6 +33,7 @@ nnoremap <S-Down> j
 
 call plug#begin('~/.vim/plugged')
 Plug 'nordtheme/vim'
+Plug 'preservim/nerdtree'
 call plug#end()
 
 if (has("termguicolors"))
@@ -45,5 +46,5 @@ let g:nord_bold = 1
 let g:nord_underline = 1
 let g:nord_undercurl = 1
 let g:nord_transparent = 1
-
+map <F3> :NERDTreeToggle<CR>
 set background=dark
