@@ -24,6 +24,7 @@ nnoremap <S-Up> k
 nnoremap <S-Down> j
 inoremap <S-Up> <Esc>k^i
 inoremap <S-Down> <Esc>j^i
+set shiftwidth=0
 
 call plug#begin('~/.vim/plugged')
     Plug 'nordtheme/vim'
