@@ -1,16 +1,8 @@
-" Configuration file for vim
-set modelines=0         " CVE-2007-2438
-
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible        " Use Vim defaults instead of 100% vi compatibility
-set backspace=2         " more powerful backspacing
-
-" Don't write backup file if vim is being called by "crontab -e"
+set modelines=0
+set nocompatible
+set backspace=2
 au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
-" Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
-
 let skip_defaults_vim=1
 syntax on
 filetype on
@@ -30,14 +22,16 @@ set mouse=a
 set scrolloff=999
 nnoremap <S-Up> k
 nnoremap <S-Down> j
+inoremap <S-Up> <Esc>k^i
+inoremap <S-Down> <Esc>j^i
 
 call plug#begin('~/.vim/plugged')
-Plug 'nordtheme/vim'
-Plug 'preservim/nerdtree'
+    Plug 'nordtheme/vim'
+    Plug 'preservim/nerdtree'
 call plug#end()
 
 if (has("termguicolors"))
-  set termguicolors
+    set termguicolors
 endif
 
 colorscheme nord
