@@ -26,7 +26,24 @@ set autoindent
 set smartindent
 set list
 set listchars=tab:>\ ,trail:-,extends:#,nbsp:+
-highlight CursorLine cterm=NONE ctermbg=238 ctermfg=NONE guibg=NONE guifg=NONE
-highlight CursorLineNR cterm=NONE ctermbg=239 ctermfg=NONE guibg=NONE guifg=NONE
-highlight LineNr cterm=NONE ctermbg=236 ctermfg=141 guibg=NONE guifg=#af87ff
-highlight CursorLineNr cterm=NONE ctermbg=239 ctermfg=141 guibg=NONE guifg=#af87ff
+set mouse=a
+set scrolloff=999
+nnoremap <S-Up> k
+nnoremap <S-Down> j
+
+call plug#begin('~/.vim/plugged')
+Plug 'nordtheme/vim'
+call plug#end()
+
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+colorscheme nord
+let g:nord_italic = 1
+let g:nord_bold = 1
+let g:nord_underline = 1
+let g:nord_undercurl = 1
+let g:nord_transparent = 1
+
+set background=dark
